@@ -23,15 +23,15 @@ def setLayout(dictPlotParams,**kwargs):
         
     plt.title(kwargs.get('title'),fontsize=dictPlotParams['fontsize_title'])
     plt.gca().tick_params(axis='both',labelsize=dictPlotParams['fontsize'])
-    plt.xlabel(xlbl,fontsize=dictPlotParams['fontsize'])
-    plt.ylabel(ylbl,fontsize=dictPlotParams['fontsize'])
+    plt.xlabel(xlbl,fontsize=dictPlotParams['fontsize_lbl'])
+    plt.ylabel(ylbl,fontsize=dictPlotParams['fontsize_lbl'])
     if xtickrot: plt.xticks(rotation=dictPlotParams["xticks_rotation"])
     if legend: plt.legend(fontsize=dictPlotParams['fontsize_lgd'])
     
     return 1
 
 # function to automatically save in png and pdf format.
-def savePlot(filename):
+def savePlot(foldSaveFig,filename):
     """Saves current figure both in png and pdf."""
-    plt.savefig(foldFig+filename+'.png',dpi=300,transparent=True)
-    plt.savefig(foldFig+filename+'.pdf',transparent=True)
+    plt.savefig(foldSaveFig+filename+'.png',dpi=300,transparent=True)
+    plt.savefig(foldSaveFig+filename+'.pdf',transparent=True)
